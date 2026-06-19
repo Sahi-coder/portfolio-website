@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahithya P A — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">SP</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">Initializing...</p>
+    </div>
+  </div>
+
+  <!-- Canvas Particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Sahithya<span>.dev</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for Internships</span>
+      </div>
+      <h1 class="hero-heading">Hi, I'm <span class="gradient-text">Sahithya P A</span></h1>
+      <div class="hero-typing-wrap">
+        <span class="typing-prefix">I'm a </span>
+        <span id="typed-text" class="typed-text"></span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="hero-sub">Information Technology Undergraduate passionate about building intelligent web applications, solving real-world problems, and creating impactful digital experiences.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#" class="btn btn-secondary" download>Download Resume</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/Sahi-coder" target="_blank" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sahithya-p-a-602132328/" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a href="mailto:240174.it@rmkec.ac.in" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title">sahithya@portfolio:~</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></p>
+          <p class="t-out">Sahithya P A — Full Stack Developer</p>
+          <p><span class="t-prompt">$</span> <span class="t-cmd">cat skills.txt</span></p>
+          <p class="t-out">Java · Python · JavaScript · React</p>
+          <p class="t-out">Node.js · MySQL · AWS · Git</p>
+          <p><span class="t-prompt">$</span> <span class="t-cmd">echo $CGPA</span></p>
+          <p class="t-out t-green">8.95 / 10.0</p>
+          <p><span class="t-prompt">$</span> <span class="t-cmd">ls projects/</span></p>
+          <p class="t-out">TaskFlow/  AI-Resume-Analyser/</p>
+          <p><span class="t-prompt">$</span> <span class="t-cursor-blink">█</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Get to know me</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Sahithya P A is a motivated Information Technology undergraduate at <strong>RMK Engineering College</strong> with a stellar CGPA of <strong>8.95/10</strong>. Passionate about software development, artificial intelligence, and modern web technologies, he enjoys transforming ideas into practical applications.</p>
+          <p>With strong foundations in Data Structures, Object-Oriented Programming, and Full Stack Development, he continuously explores emerging technologies while building innovative solutions that solve real-world challenges.</p>
+          <div class="about-langs">
+            <span class="lang-chip">🌐 English</span>
+            <span class="lang-chip">🌐 Tamil</span>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="info-card glass-card">
+            <div class="info-icon">🎓</div>
+            <div>
+              <strong>B.Tech Information Technology</strong>
+              <p>RMK Engineering College</p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon">📊</div>
+            <div>
+              <strong>CGPA: 8.95 / 10</strong>
+              <p>Academic Excellence</p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon">📍</div>
+            <div>
+              <strong>Chennai, India</strong>
+              <p>Available Remotely</p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon">📅</div>
+            <div>
+              <strong>Batch 2024 – 2028</strong>
+              <p>Seeking Internships</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section reveal">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+          <p>Major Projects</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8" data-decimal="95">0</span><span class="stat-suffix">/10</span>
+          <p>CGPA</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+          <p>Technologies</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+          <p>Continuous Learner</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section education-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Academic journey</span>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="edu-header">
+              <div>
+                <h3>RMK Engineering College</h3>
+                <p class="edu-degree">Bachelor of Technology — Information Technology</p>
+              </div>
+              <span class="edu-year">2024 – 2028</span>
+            </div>
+            <div class="edu-score">
+              <span class="score-label">CGPA</span>
+              <span class="score-value">8.95 / 10</span>
+              <div class="score-bar"><div class="score-fill" style="width: 89.5%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="edu-header">
+              <div>
+                <h3>Velammal Vidhyashram</h3>
+                <p class="edu-degree">Higher Secondary Education</p>
+              </div>
+            </div>
+            <div class="edu-scores-row">
+              <div class="edu-score">
+                <span class="score-label">Class XII</span>
+                <span class="score-value">89.6%</span>
+                <div class="score-bar"><div class="score-fill" style="width: 89.6%"></div></div>
+              </div>
+              <div class="edu-score">
+                <span class="score-label">Class X</span>
+                <span class="score-value">87.8%</span>
+                <div class="score-bar"><div class="score-fill" style="width: 87.8%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">What I work with</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category glass-card reveal">
+          <h3><span class="skill-icon">💻</span> Programming Languages</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span>Java</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>Python</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>JavaScript</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>HTML / CSS</span><span>92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+          <h3><span class="skill-icon">🧠</span> Core Concepts</h3>
+          <div class="concept-chips">
+            <span class="chip">Data Structures & Algorithms</span>
+            <span class="chip">Object-Oriented Programming</span>
+            <span class="chip">Database Management</span>
+            <span class="chip">Software Dev Lifecycle</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+          <h3><span class="skill-icon">🛠️</span> Tools & Technologies</h3>
+          <div class="concept-chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">AWS Basics</span>
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Supabase</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+          <h3><span class="skill-icon">🤝</span> Soft Skills</h3>
+          <div class="concept-chips">
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Communication</span>
+            <span class="chip">Teamwork</span>
+            <span class="chip">Time Management</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section projects-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">What I've built</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- TaskFlow -->
+        <div class="project-card glass-card reveal">
+          <div class="project-header">
+            <div class="project-tag">Full Stack Project</div>
+            <div class="project-links">
+              <a href="https://github.com/Sahi-coder/taskflow" target="_blank" class="project-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="https://taskflow-qs66z57k1-sahi-s-projects2.vercel.app" target="_blank" class="project-link-btn" title="Live Demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-display">📋</div>
+          <h3>TaskFlow</h3>
+          <p>A Trello-inspired task management platform with drag-and-drop Kanban boards. Create tasks, assign due dates, manage project progress, and track productivity through a clean, responsive interface.</p>
+          <div class="project-features">
+            <span class="feature-chip">Kanban Boards</span>
+            <span class="feature-chip">Drag & Drop</span>
+            <span class="feature-chip">Due Date Tracking</span>
+            <span class="feature-chip">CRUD Operations</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Supabase</span>
+          </div>
+          <div class="project-outcomes">
+            <h4>Learning Outcomes</h4>
+            <ul>
+              <li>Component Architecture</li>
+              <li>State Management</li>
+              <li>Modern UI Design</li>
+              <li>Deployment Workflows</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- AI Resume Analyzer -->
+        <div class="project-card glass-card reveal">
+          <div class="project-header">
+            <div class="project-tag ai-tag">AI + Full Stack</div>
+            <div class="project-links">
+              <a href="https://github.com/Sahi-coder/AI-Resume-Analyser" target="_blank" class="project-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-display">🤖</div>
+          <h3>AI Resume Analyzer</h3>
+          <p>An intelligent AI-powered platform that evaluates resumes, calculates ATS compatibility scores, compares against job descriptions, identifies missing keywords, and provides actionable feedback via Groq LLM.</p>
+          <div class="project-features">
+            <span class="feature-chip">ATS Score</span>
+            <span class="feature-chip">JD Matching</span>
+            <span class="feature-chip">AI Feedback</span>
+            <span class="feature-chip">PDF/DOCX Upload</span>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">Groq API</span>
+            <span class="tech-tag">Llama 3.3 70B</span>
+          </div>
+          <div class="project-outcomes">
+            <h4>Learning Outcomes</h4>
+            <ul>
+              <li>AI Integration</li>
+              <li>Prompt Engineering</li>
+              <li>File Processing</li>
+              <li>API Development</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Let's connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">Whether you have an internship opportunity, project idea, or just want to say hi — my inbox is always open!</p>
+          <div class="contact-items">
+            <a href="tel:+917010687696" class="contact-item glass-card">
+              <div class="contact-icon">📞</div>
+              <div><strong>Phone</strong><span>+91 7010687696</span></div>
+            </a>
+            <a href="mailto:240174.it@rmkec.ac.in" class="contact-item glass-card">
+              <div class="contact-icon">✉️</div>
+              <div><strong>Email</strong><span>240174.it@rmkec.ac.in</span></div>
+            </a>
+            <div class="contact-item glass-card">
+              <div class="contact-icon">📍</div>
+              <div><strong>Location</strong><span>Chennai, India</span></div>
+            </div>
+            <a href="https://github.com/Sahi-coder" target="_blank" class="contact-item glass-card">
+              <div class="contact-icon">⚡</div>
+              <div><strong>GitHub</strong><span>Sahi-coder</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/sahithya-p-a-602132328/" target="_blank" class="contact-item glass-card">
+              <div class="contact-icon">💼</div>
+              <div><strong>LinkedIn</strong><span>sahithya-pa</span></div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form glass-card" id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="What's this about?" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            <span id="btn-text">Send Message</span>
+            <span id="btn-icon">→</span>
+          </button>
+          <div id="form-success" class="form-success" style="display:none">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 <strong>Sahithya P A</strong></p>
+      <p class="footer-built">Built with HTML, CSS &amp; JavaScript</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Sahi-coder" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sahithya-p-a-602132328/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
